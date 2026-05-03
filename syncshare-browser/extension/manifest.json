@@ -36,7 +36,7 @@
       "extension_pages": "default-src 'self'; img-src data:; connect-src 'self' https://syncshare.ru/api/ https:;"
    },
    "default_locale": "en",
-   "description": "__MSG_extensionDescription__",
+   "description": "Synchronize and share right answers to Moodle quizzes.",
    "homepage_url": "https://syncshare.ru/",
    "host_permissions": [ "*://*/*" ],
    "icons": {
@@ -49,8 +49,7 @@
    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuyv8IgdS0U/1i+JXF3//lgI/06slEmgBvCjHNw46lsGXlOZbaEtgXFM8WufA0VmIDTnOxwpjWaoDbDM9+2Zg9YZNEP/6sFqmZ7a1L+Hcjy0JH5RfgyGV48fl5uFBRRb5PiT9xm4XU5s3g5/rKWTFKKT4thBL9VsrAXF8O3WTIfEpBoW+oAkBPT8bTQXbc+5TkdObEbV61NB90uvLPIXwGL/Ph5TsHYyfZDz/L7WFdIMVhglDT934CxJsSOnfbWsaF0mAUbyysKrmkKZWXCsbHrM2+x8Xt3s85fmF96lRf++Mezik04Mhp9iJrr/A/XV1ByGvAcmAFbqY6DK81z5WiQIDAQAB",
    "manifest_version": 3,
    "name": "SyncShare",
-   "permissions": [ "storage", "contextMenus" ],
-   "update_url": "https://clients2.google.com/service/update2/crx",
+   "permissions": [ "storage", "contextMenus", "scripting" ],
    "version": "2.11.0",
    "web_accessible_resources": [ {
       "matches": [ "\u003Call_urls>" ],
