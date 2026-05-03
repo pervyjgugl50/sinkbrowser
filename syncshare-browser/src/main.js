@@ -8,10 +8,14 @@ let isDev = process.env.NODE_ENV === 'development';
 // Путь к расширению
 const extensionPath = path.join(__dirname, '..', 'extension');
 
+// Путь к стартовой странице
+const startPagePath = path.join(__dirname, 'startpage.html');
+const startPageUrl = `file://${startPagePath}`;
+
 // Конфигурация
 const config = {
-  // Стартовый URL (можно изменить для вашей системы Modly)
-  homeUrl: 'about:blank',
+  // Стартовый URL (используем локальную стартовую страницу)
+  homeUrl: startPageUrl,
   // Ширина окна
   width: 1400,
   // Высота окна

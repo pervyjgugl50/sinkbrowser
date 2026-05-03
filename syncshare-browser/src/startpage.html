@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SyncShare Browser - Главная</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        .search-container {
+            background: white;
+            border-radius: 50px;
+            padding: 8px;
+            display: flex;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 15px 25px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            background: transparent;
+        }
+
+        .search-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 50px;
+            padding: 15px 30px;
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-weight: 500;
+        }
+
+        .search-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .search-button:active {
+            transform: translateY(0);
+        }
+
+        .shortcuts {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .shortcut {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            color: white;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .shortcut:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+        }
+
+        .shortcut-icon {
+            font-size: 2rem;
+        }
+
+        .shortcut-label {
+            font-size: 0.9rem;
+        }
+
+        .info {
+            margin-top: 50px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 SyncShare Browser</h1>
+        <p class="subtitle">Ваш защищенный браузер без привязки к аккаунтам</p>
+
+        <form id="searchForm" class="search-container">
+            <input 
+                type="text" 
+                id="searchInput" 
+                class="search-input" 
+                placeholder="Введите поисковый запрос или URL..."
+                autocomplete="off"
+                autofocus
+            >
+            <button type="submit" class="search-button">Поиск</button>
+        </form>
+
+        <div class="shortcuts">
+            <a href="https://www.google.com" class="shortcut" data-url="https://www.google.com">
+                <span class="shortcut-icon">🔍</span>
+                <span class="shortcut-label">Google</span>
+            </a>
+            <a href="https://www.wikipedia.org" class="shortcut" data-url="https://www.wikipedia.org">
+                <span class="shortcut-icon">📚</span>
+                <span class="shortcut-label">Wikipedia</span>
+            </a>
+            <a href="https://github.com" class="shortcut" data-url="https://github.com">
+                <span class="shortcut-icon">💻</span>
+                <span class="shortcut-label">GitHub</span>
+            </a>
+            <a href="about:blank" class="shortcut" data-url="about:blank">
+                <span class="shortcut-icon">📄</span>
+                <span class="shortcut-label">Новая вкладка</span>
+            </a>
+        </div>
+
+        <div class="info">
+            <p>Браузер не требует входа в аккаунт Google или другие сервисы</p>
+        </div>
+    </div>
+
+    <script>
+        const searchForm = document.getElementById('searchForm');
+        const searchInput = document.getElementById('searchInput');
+        const shortcuts = document.querySelectorAll('.shortcut[data-url]');
+
+        // Обработка поиска
+        searchForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const query = searchInput.value.trim();
+            
+            if (query) {
+                // Проверяем, является ли ввод URL
+                if (query.startsWith('http://') || query.startsWith('https://') || query.includes('.') && !query.includes(' ')) {
+                    // Это URL
+                    window.location.href = query.startsWith('http') ? query : `https://${query}`;
+                } else {
+                    // Это поисковый запрос - используем Google
+                    window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+                }
+            }
+        });
+
+        // Обработка ярлыков
+        shortcuts.forEach(shortcut => {
+            shortcut.addEventListener('click', (e) => {
+                e.preventDefault();
+                const url = shortcut.getAttribute('data-url');
+                if (url && url !== 'about:blank') {
+                    window.location.href = url;
+                }
+            });
+        });
+
+        // Поддержка нажатия Enter
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                searchForm.dispatchEvent(new Event('submit'));
+            }
+        });
+    </script>
+</body>
+</html>
