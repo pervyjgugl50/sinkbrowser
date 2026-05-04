@@ -1,138 +1,54 @@
 ```
-# Build artifacts
-syncshare-browser/extension/css/*.min.css
+# Compiled and build artifacts
+*.pyc
+__pycache__/
+*.o
+*.obj
+dist/
+build/
+*.class
+*.exe
+*.dll
+*.so
+*.a
+*.out
 
 # Dependencies
+.venv/
+venv/
 node_modules/
+.julia/
+zig*/
+target/
+.gradle/
 
-# Editors
-.vscode/
-.idea/
-
-# Logs
+# Logs and temp files
 *.log
+*.tmp
+*.swp
+*.swo
 
 # Environment
 .env
 .env.local
 *.env.*
 
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
-env/
-venv/
-.venv/
-pip-log.txt
-pip-delete-this-directory.txt
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.log
-*.pot
-*.pyc
-*.pyo
-.pytest_cache/
-.mypy_cache/
-.hypothesis/
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
 
-# Node.js
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-lerna-debug.log*
-.sanity/
-.next/
-.nuxt/
-.vuepress/dist
-.serverless/
-webpack.config.js
-webpack.config.babel.js
-.webpackrc
-.webpackrc.js
-.webpackrc.json
-.webpackrc.yaml
-.webpackrc.yml
-.webpackrc.babel.js
-.webpackrc.babel.ts
-.webpackrc.babel.json
-.webpackrc.babel.yaml
-.webpackrc.babel.yml
-.webpackrc.babel.coffee
-.webpackrc.babel.jsx
-.webpackrc.babel.tsx
-.webpackrc.babel.vue
-.webpackrc.babel.svelte
-.webpackrc.babel.pug
-.webpackrc.babel.jade
-.webpackrc.babel.haml
-.webpackrc.babel.slim
-.webpackrc.babel.erb
-.webpackrc.babel.ejs
-.webpackrc.babel.hbs
-.webpackrc.babel.handlebars
-.webpackrc.babel.mustache
-.webpackrc.babel.liquid
-.webpackrc.babel.twig
-.webpackrc.babel.smarty
-.webpackrc.babel.latte
-.webpackrc.babel.blade
-.webpackrc.babel.php
-.webpackrc.babel.phtml
-.webpackrc.babel.inc
-.webpackrc.babel.module
-.webpackrc.babel.install
-.webpackrc.babel.test
-.webpackrc.babel.spec
-.webpackrc.babel.config
-.webpackrc.babel.conf
-.webpackrc.babel.js
-.webpackrc.babel.json
-.webpackrc.babel.yaml
-.webpackrc.babel.yml
-.webpackrc.babel.coffee
-.webpackrc.babel.jsx
-.webpackrc.babel.tsx
-.webpackrc.babel.vue
-.webpackrc.babel.svelte
-.webpackrc.babel.pug
-.webpackrc.babel.jade
-.webpackrc.babel.haml
-.webpackrc.babel.slim
-.webpackrc.babel.erb
-.webpackrc.babel.ejs
-.webpackrc.babel.hbs
-.webpackrc.babel.handlebars
-.webpackrc.babel.mustache
-.webpackrc.babel.liquid
-.webpackrc.babel.twig
-.webpackrc.babel.smarty
-.webpackrc.babel.latte
-.webpackrc.babel.blade
-.webpackrc.babel.php
-.webpackrc.babel.phtml
-.webpackrc.babel.inc
-.webpackrc.babel.module
-.webpackrc.babel.install
-.webpackrc.babel.test
-.webpackrc.babel.spec
-.webpackrc.babel.config
-.webpackrc.babel.conf
-
-# OS generated files
+# System files
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
 Thumbs.db
+
+# Coverage
+coverage/
+htmlcov/
+.coverage
+
+# Cache
+.mypy_cache/
+.pytest_cache/
 ```
