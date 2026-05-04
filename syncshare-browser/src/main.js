@@ -140,7 +140,7 @@ async function loadExtension() {
 function configureSession() {
   const ses = session.defaultSession;
   
-  // Разрешаем CORS для локальных ресурсов
+  // Разрешаем CORS для локальных ресурсов и chrome-extension://
   ses.webRequest.onHeadersReceived((details, callback) => {
     callback({
       responseHeaders: {
